@@ -1,0 +1,30 @@
+@using ExemploCrudMySql.Models
+@model IEnumerable<Documento>
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Titulo</th>
+            <th>Processo</th>
+            <th>Categoria</th>
+            <th>Arquivo</th>
+        </tr>
+    </thead>
+        @foreach (Documento d in Model)
+        {
+            <tr>
+                <td>@d.Codigo</td>
+                <td>@d.Titulo</td>
+                <td>@d.Processo</td>
+                <td>@d.Categoria</td>
+                <td><a href='@d.Arquivo'>'Visualizar arquivo'</a></td>
+            </tr>
+        }
+    <tbody>
+
+    </tbody>
+</table>
